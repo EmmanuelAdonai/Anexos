@@ -79,9 +79,16 @@ public class RepAnexo {
                   fondoDetalle.setFont(fontContTitle).setFontSize(4).setTextAlignment(TextAlignment.CENTER);
                   Style fondoDetalleLeft = new Style();
                   fondoDetalleLeft.setFont(fontContTitle).setFontSize(4).setTextAlignment(TextAlignment.LEFT);
-                  
+                  // -- Estilo para los fondos centrados -- //
                   Style fondo = new Style();
                   fondo.setFont(fontContTitle).setFontSize(4).setTextAlignment(TextAlignment.CENTER);
+                   // -- Estilo para los fondos left -- //
+                  Style fondoLeft = new Style();
+                  fondoLeft.setFont(fontContTitle).setFontSize(4).setTextAlignment(TextAlignment.LEFT);
+                   // -- Estilo para los fondos right -- //
+                  Style fondoRight = new Style();
+                  fondoRight.setFont(fontContTitle).setFontSize(4).setTextAlignment(TextAlignment.RIGHT);
+                  
                   Style fondoSub = new Style();
                   fondoSub.setFont(fontContTitle).setFontSize(8).setTextAlignment(TextAlignment.CENTER);
                   // -- Estilo para el total general -- //
@@ -189,7 +196,7 @@ public class RepAnexo {
                            //////////////////////////////////////////////
                            Table tblContent = new Table(22);
                            tblContent.setWidth(UnitValue.createPercentValue(100));
-                           // -- Fila Encabezados Tabla -- //
+                           // -- Fila 1 -- //
                            tblContent.addCell(new Cell(2,1).setWidth(30).addStyle(titles).add(new Paragraph("Número de la Obra/Acción")));
                            tblContent.addCell(new Cell(2,1).setWidth(10).addStyle(titles).add(new Paragraph("Prog")));
                            tblContent.addCell(new Cell(2,1).setWidth(10).addStyle(titles).add(new Paragraph("Subp")));
@@ -198,18 +205,18 @@ public class RepAnexo {
                            tblContent.addCell(new Cell(2,1).setWidth(105).addStyle(titles).add(new Paragraph("Nombre de la Obra/Acción")));
                            tblContent.addCell(new Cell(2,1).setWidth(10).addStyle(titles).add(new Paragraph("Sit")));
                            tblContent.addCell(new Cell(2,1).setWidth(10).addStyle(titles).add(new Paragraph("ME")));
-                           tblContent.addCell(new Cell(2,1).setWidth(40).addStyle(titles).add(new Paragraph("Fuente de Financiamiento")));
+                           tblContent.addCell(new Cell(2,1).setWidth(70).addStyle(titles).add(new Paragraph("Fuente de Financiamiento")));
                            
-                           tblContent.addCell(new Cell(1,6).setWidth(120).addStyle(titles).add(new Paragraph("Inversión Convenida")));
+                           tblContent.addCell(new Cell(1,6).setWidth(90).addStyle(titles).add(new Paragraph("Inversión Convenida")));
                            tblContent.addCell(new Cell(1,2).setWidth(60).addStyle(titles).add(new Paragraph("Metas")));
                            tblContent.addCell(new Cell(1,5).setWidth(120).addStyle(titles).add(new Paragraph("Beneficiarios")));
-                           
-                           tblContent.addCell(new Cell().setWidth(20).addStyle(titles).add(new Paragraph("Total")));
-                           tblContent.addCell(new Cell().setWidth(20).addStyle(titles).add(new Paragraph("Federal")));
-                           tblContent.addCell(new Cell().setWidth(20).addStyle(titles).add(new Paragraph("Estatal")));
-                           tblContent.addCell(new Cell().setWidth(20).addStyle(titles).add(new Paragraph("Municipal")));
-                           tblContent.addCell(new Cell().setWidth(20).addStyle(titles).add(new Paragraph("Beneficirios")));
-                           tblContent.addCell(new Cell().setWidth(20).addStyle(titles).add(new Paragraph("Otros")));
+                           // -- Fila 2 -- //
+                           tblContent.addCell(new Cell().setWidth(15).addStyle(titles).add(new Paragraph("Total")));
+                           tblContent.addCell(new Cell().setWidth(15).addStyle(titles).add(new Paragraph("Federal")));
+                           tblContent.addCell(new Cell().setWidth(15).addStyle(titles).add(new Paragraph("Estatal")));
+                           tblContent.addCell(new Cell().setWidth(15).addStyle(titles).add(new Paragraph("Municipal")));
+                           tblContent.addCell(new Cell().setWidth(15).addStyle(titles).add(new Paragraph("Beneficirios")));
+                           tblContent.addCell(new Cell().setWidth(15).addStyle(titles).add(new Paragraph("Otros")));
                            
                            tblContent.addCell(new Cell().setWidth(40).addStyle(titles).add(new Paragraph("Unidad de Medida")));
                            tblContent.addCell(new Cell().setWidth(20).addStyle(titles).add(new Paragraph("Cantidad")));
@@ -236,7 +243,7 @@ public class RepAnexo {
                                      tblFondos.setWidth(UnitValue.createPercentValue(100));
                                     for(int c = 0; c < fon.get(0).getNumFondo(); c++) {
                                              if(fond.get(c).getClvObraNo() == null ? d.get(b).getNumObra() == null : fond.get(c).getClvObraNo().equals(d.get(b).getNumObra())) {
-                                                      tblFondos.addCell(new Cell().setWidth(UnitValue.createPercentValue(22)).addStyle(fondo).add(new Paragraph(fond.get(c).getDesc()))
+                                                      tblFondos.addCell(new Cell().setWidth(UnitValue.createPercentValue(22)).addStyle(fondoLeft).add(new Paragraph(fond.get(c).getDesc()))
                                                                .setBorder(Border.NO_BORDER).setBorderBottom(new SolidBorder(1)));
                                                       tblFondos.addCell(new Cell().setWidth(UnitValue.createPercentValue(13)).addStyle(fondo).add(new Paragraph("$"+fond.get(c).getTot()))
                                                                 .setBorder(Border.NO_BORDER).setBorderBottom(new SolidBorder(1)));
