@@ -11,10 +11,10 @@ package classes;
 public class Constans {
     // --- Credenciales produccion de SQL --- //
     public static final String driver = "net.sourceforge.jtds.jdbc.Driver";
-    public static final String db = "DB_A3326D_SISCONET";
-    public static final String server = "35.169.41.86";
-    public static final String user = "SISCOAdmin";
-    public static final String pass = "F2UvjZSUzyHNUU8bEfNCDH8dTXWJcjnR";
+    public static final String db = "";
+    public static final String server = "";
+    public static final String user = "";
+    public static final String pass = "";
     
     // -- Variables Globales --- //
     public static String year = "";
